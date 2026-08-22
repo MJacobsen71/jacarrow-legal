@@ -1,6 +1,6 @@
 # Privacy Policy — JacArrow
 
-**Last updated:** 2026-05-25
+**Last updated:** 2026-08-22
 **Data Controller:** Morten Jacobsen, Norway
 **Contact:** galge.vender.0a@icloud.com
 
@@ -13,9 +13,13 @@ servers that receive your shoots, sessions, or goals. When you uninstall
 the app, all data is gone.
 
 The only third parties that receive information are:
-- **Apple** — handles App Store purchases and notifications
+- **Apple** (if you use the app on iPhone) — handles App Store purchases
+- **Google** (if you use the app on Android) — handles Google Play purchases
 - **RevenueCat** (after you purchase Pro) — verifies your purchase
 - **Sentry** (only if you opt in to crash reporting) — receives anonymous crash data to help us fix bugs
+
+Which of Apple and Google is involved depends on the store you downloaded
+the app from. Neither is involved in your shooting data itself.
 
 You have full GDPR rights to access, deletion, and data portability.
 
@@ -28,52 +32,68 @@ You have full GDPR rights to access, deletion, and data portability.
 - **Settings:** selected language, theme, dominant hand, competition class, notification toggles
 - **App history:** coach-mark status (which tips you have seen), tutorial-completed flags
 
-All this data is stored in an SQLite database and AsyncStorage on your iPhone.
-Neither JacArrow nor any third party has access to this data.
+All this data is stored in an SQLite database and AsyncStorage on your phone.
+Neither JacArrow nor any third party has access to this data. There is no user
+account, no cloud storage, and no syncing between devices — your data stays on
+the device you recorded it on.
 
-### iCloud (only when iCloud Drive is enabled)
-JacArrow plans to use iCloud Key-Value Storage for one specific purpose:
-to remember whether you have started the trial period before. This syncs
-via your iCloud account to prevent uninstall + reinstall from granting a
-new free trial period.
+### Notifications (scheduled locally on the device)
+JacArrow can send you notifications: that you have set a personal record,
+that your trial period is nearing its end, or reminders about your goals.
 
-- Apple is the data processor (our agreement is governed by their standard terms)
-- The values stored are **only**: the trial-start date and a «trial-used» status
-- This feature activates when we launch the Pro model (Phase 4b)
+All of these are **scheduled locally on your device** and computed from data
+that never leaves it. We have no server sending notifications, and we never
+receive a notification token, a delivery receipt, or any record of what you
+did with a notification. Delivery itself is handled by the operating system on
+your phone (iOS or Android), the same way as an alarm you set yourself.
 
-If you have disabled iCloud Drive, or disabled iCloud Drive specifically
-for JacArrow, iCloud is not used.
+You can turn notifications off at any time — both inside JacArrow under
+**Settings → Notifications**, and in your phone's own settings.
 
 ---
 
 ## Third parties
 
-### Apple App Store
-All in-app purchases are handled by Apple. We never receive card information,
-addresses, or other payment details. Apple's
+### Apple App Store (on iPhone)
+If you downloaded JacArrow from the App Store, all in-app purchases are
+handled by Apple. We never receive card information, addresses, or other
+payment details. Apple's
 [Privacy Policy](https://www.apple.com/legal/privacy/) applies to the
 purchase flow.
 
-### Apple Push Notification Service (APNS)
-JacArrow sends local notifications (PR achieved, trial-period expiration,
-goal reminders). To deliver these, iOS registers an anonymous device token
-with Apple. We have no servers sending push messages — all notifications are
-generated locally on your device based on app state.
+### Google Play (on Android)
+If you downloaded JacArrow from Google Play, all in-app purchases are handled
+by Google via Google Play Billing. We never receive card information,
+addresses, or other payment details — we are only told that a purchase
+completed and is valid. Google's
+[Privacy Policy](https://policies.google.com/privacy) applies to the purchase
+flow.
+
+Note that Google Play, unlike the App Store, does **not** share an in-app
+purchase with a family group. That is a difference between the stores, not
+something we control.
 
 ### RevenueCat (only after Pro purchase)
 When you purchase JacArrow Pro, RevenueCat records your receipt and an
 anonymous `appUserId` (a UUID generated on your device). This is necessary
 for the app to verify your purchase on later use and during «Restore
-Purchases». RevenueCat's
+Purchases». The receipt comes from the App Store or Google Play, depending on
+where you bought it. RevenueCat's
 [Privacy Policy](https://www.revenuecat.com/privacy) applies. We never send
 your name, email, or other personal data.
 
-### Apple Analytics / Crash Reports
-If you have enabled «Share App Analytics» in iOS Settings, Apple sends
-anonymous aggregate data about usage and crashes to the developer.
-JacArrow uses this for bug fixes and performance optimization. You can
-disable this via:
-**iOS Settings → Privacy & Security → Analytics & Improvements**.
+### Operating-system analytics and crash data
+Both Apple and Google can send developers anonymous, aggregated counts about
+usage and crashes — but only if **you** have turned that on in your phone's
+own settings. This is a store feature, not ours: we see totals only, never
+anything traceable to you. We use it for bug fixes and performance
+optimization.
+
+- **iPhone:** controlled by «Share App Analytics». Turn it off via
+  **Settings → Privacy & Security → Analytics & Improvements**.
+- **Android:** controlled by «Usage & diagnostics». Turn it off via
+  **Settings → Google → Usage & diagnostics** (the exact name varies slightly
+  between manufacturers).
 
 ### Sentry (only if you have enabled crash reporting)
 Sentry is an error monitoring service that helps us identify and fix bugs
@@ -82,7 +102,7 @@ via **Settings → Privacy → Crash reports** (the toggle is OFF by default).
 
 When opted in, the following is sent to Sentry's EU servers (Germany):
 - Crash stack traces (file names, line numbers, exception types)
-- Device model and iOS version
+- Device model and operating-system version (iOS or Android)
 - App version and build number
 
 We do **not** send:
@@ -100,10 +120,11 @@ received.
 ## What we do NOT collect
 
 - No user account, email address, or password
+- No cloud storage, no backup to our servers, no syncing between devices
 - No GPS or location data
 - No access to contacts, calendar, camera, or microphone
-- No third-party trackers (Firebase, Google Analytics, Facebook Pixel, etc.)
-- No advertising identifiers (IDFA)
+- No third-party trackers (Firebase Analytics, Google Analytics, Facebook Pixel, etc.)
+- No advertising identifiers (IDFA on iOS, Advertising ID on Android)
 - No video tracking or device fingerprinting
 
 ---
@@ -120,23 +141,27 @@ You have full visibility via:
 
 **Right to data portability (Art. 20):** Use
 **Settings → Export my data** to download all your data as a JSON file. The
-file can be shared via the iOS share sheet to email, AirDrop, Files, etc.
-This is your complete shooting history in a standard format.
+file can be shared via your phone's share sheet to email, AirDrop, Files,
+Google Drive, etc. This is your complete shooting history in a standard
+format.
 
 **Right to erasure (Art. 17):**
 - *Delete individual session:* swipe the session on the home screen → Delete
-- *Delete all data:* uninstall JacArrow — iOS automatically deletes all
-  SQLite database and AsyncStorage. RevenueCat receipt (if you have
-  purchased Pro) is retained by Apple and RevenueCat for refund and support
-  purposes.
+- *Delete all data:* uninstall JacArrow — both iOS and Android automatically
+  delete the entire SQLite database and AsyncStorage. The receipt for a Pro
+  purchase is retained by the store you bought from (Apple or Google) and by
+  RevenueCat for refund and support purposes.
 
 **Right to restriction and objection (Art. 18–21):** JacArrow does not
 make any automated decisions about you. The Smart Insights engine only
 analyzes your own training data locally on your device and presents
 observations — it makes no decisions on your behalf.
 
-**Right to withdraw consent (Art. 7):** Apple Analytics opt-in is controlled
-via iOS Settings. RevenueCat data is deleted when you delete your Apple ID.
+**Right to withdraw consent (Art. 7):** Analytics consent for Apple and
+Google is controlled in your phone's own settings (see «Operating-system
+analytics and crash data» above). Crash reporting to Sentry is turned off
+inside JacArrow under **Settings → Privacy**. RevenueCat data is deleted when
+you delete the Apple ID or Google account the purchase was made with.
 
 ---
 

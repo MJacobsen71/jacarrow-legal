@@ -1,6 +1,6 @@
 # Politique de confidentialité — JacArrow
 
-**Dernière mise à jour :** 2026-05-25
+**Dernière mise à jour :** 2026-08-22
 **Responsable du traitement :** Morten Jacobsen, Norvège
 **Contact :** galge.vender.0a@icloud.com
 
@@ -13,9 +13,14 @@ serveur qui reçoit vos tirs, vos séances ou vos objectifs. Lorsque vous désin
 l'application, toutes les données disparaissent.
 
 Les seuls tiers qui reçoivent des informations sont :
-- **Apple** — gère les achats App Store et les notifications
+- **Apple** (si vous utilisez l'app sur iPhone) — gère les achats App Store
+- **Google** (si vous utilisez l'app sur Android) — gère les achats Google Play
 - **RevenueCat** (après votre achat Pro) — vérifie votre achat
 - **Sentry** (uniquement si vous activez les rapports de plantage) — reçoit des données de plantage anonymes pour nous aider à corriger les bugs
+
+Lequel d'Apple ou de Google est concerné dépend de la boutique depuis laquelle
+vous avez téléchargé l'app. Aucun des deux n'intervient sur vos données de tir
+elles-mêmes.
 
 Vous disposez de l'intégralité des droits RGPD : accès, effacement et portabilité des données.
 
@@ -28,52 +33,73 @@ Vous disposez de l'intégralité des droits RGPD : accès, effacement et portabi
 - **Préférences :** langue sélectionnée, thème, main de tir, catégorie de compétition, options de notification
 - **Historique de l'app :** statut des coach-marks (les astuces que vous avez vues), indicateurs de tutoriels complétés
 
-Toutes ces données sont stockées dans une base de données SQLite et dans AsyncStorage sur votre iPhone.
-Ni JacArrow, ni aucun tiers, n'a accès à ces données.
+Toutes ces données sont stockées dans une base de données SQLite et dans
+AsyncStorage sur votre téléphone. Ni JacArrow, ni aucun tiers, n'a accès à ces
+données. Il n'y a aucun compte utilisateur, aucun stockage dans le cloud et
+aucune synchronisation entre appareils — vos données restent sur l'appareil sur
+lequel vous les avez enregistrées.
 
-### iCloud (uniquement si iCloud Drive est activé)
-JacArrow prévoit d'utiliser iCloud Key-Value Storage à une seule fin précise :
-mémoriser si vous avez déjà démarré la période d'essai. Cela se synchronise
-via votre compte iCloud pour empêcher qu'une désinstallation + réinstallation
-n'accorde une nouvelle période d'essai gratuite.
+### Notifications (planifiées localement sur l'appareil)
+JacArrow peut vous envoyer des notifications : que vous avez établi un record
+personnel, que votre période d'essai approche de sa fin, ou des rappels
+concernant vos objectifs.
 
-- Apple est le sous-traitant (notre accord est soumis à leurs conditions standard)
-- Les valeurs stockées sont **uniquement** : la date de début d'essai et un statut « essai utilisé »
-- Cette fonctionnalité s'active lorsque nous lancerons le modèle Pro (Phase 4b)
+Toutes sont **planifiées localement sur votre appareil** et calculées à partir
+de données qui ne le quittent jamais. Nous n'avons aucun serveur qui envoie des
+notifications, et nous ne recevons jamais de jeton de notification, d'accusé de
+réception, ni aucune information sur ce que vous avez fait d'une notification.
+La livraison elle-même est assurée par le système d'exploitation de votre
+téléphone (iOS ou Android), exactement comme une alarme que vous auriez réglée
+vous-même.
 
-Si vous avez désactivé iCloud Drive, ou désactivé iCloud Drive spécifiquement
-pour JacArrow, iCloud n'est pas utilisé.
+Vous pouvez désactiver les notifications à tout moment — dans JacArrow via
+**Réglages → Notifications**, et dans les réglages de votre téléphone.
 
 ---
 
 ## Tiers
 
-### Apple App Store
-Tous les achats intégrés sont gérés par Apple. Nous ne recevons jamais d'informations
-bancaires, d'adresses ou d'autres détails de paiement. La
+### Apple App Store (sur iPhone)
+Si vous avez téléchargé JacArrow depuis l'App Store, tous les achats intégrés
+sont gérés par Apple. Nous ne recevons jamais d'informations bancaires,
+d'adresses ou d'autres détails de paiement. La
 [politique de confidentialité d'Apple](https://www.apple.com/fr/legal/privacy/) s'applique au
 processus d'achat.
 
-### Apple Push Notification Service (APNS)
-JacArrow envoie des notifications locales (RP atteint, expiration de la période d'essai,
-rappels d'objectifs). Pour les livrer, iOS enregistre un jeton d'appareil anonyme
-auprès d'Apple. Nous n'avons aucun serveur qui envoie des messages push — toutes les notifications
-sont générées localement sur votre appareil en fonction de l'état de l'app.
+### Google Play (sur Android)
+Si vous avez téléchargé JacArrow depuis Google Play, tous les achats intégrés
+sont gérés par Google via Google Play Billing. Nous ne recevons jamais
+d'informations bancaires, d'adresses ou d'autres détails de paiement — on nous
+indique seulement qu'un achat est effectué et valide. La
+[politique de confidentialité de Google](https://policies.google.com/privacy?hl=fr)
+s'applique au processus d'achat.
+
+Notez que Google Play, contrairement à l'App Store, ne partage **pas** un achat
+intégré avec un groupe familial. C'est une différence entre les boutiques, et
+non quelque chose que nous contrôlons.
 
 ### RevenueCat (uniquement après achat Pro)
 Lorsque vous achetez JacArrow Pro, RevenueCat enregistre votre reçu et un
 `appUserId` anonyme (UUID généré sur votre appareil). Cela est nécessaire
 pour que l'app puisse vérifier votre achat lors d'utilisations ultérieures et lors de la
-« restauration des achats ». La
+« restauration des achats ». Le reçu provient de l'App Store ou de Google Play,
+selon l'endroit où vous avez acheté. La
 [politique de confidentialité de RevenueCat](https://www.revenuecat.com/privacy) s'applique. Nous n'envoyons jamais
 votre nom, votre e-mail ou d'autres données personnelles.
 
-### Apple Analytics / rapports de plantage
-Si vous avez activé « Partager l'analyse de l'app » dans les Réglages iOS, Apple envoie
-des données agrégées anonymes sur l'utilisation et les plantages au développeur.
-JacArrow utilise cela pour la correction de bugs et l'optimisation des performances. Vous pouvez
-désactiver cela via :
-**Réglages iOS → Confidentialité et sécurité → Analyse et améliorations**.
+### Analyses et données de plantage du système d'exploitation
+Apple et Google peuvent tous deux envoyer aux développeurs des chiffres
+anonymes et agrégés sur l'utilisation et les plantages — mais uniquement si
+**vous** l'avez activé dans les réglages de votre téléphone. C'est une
+fonctionnalité de la boutique, pas la nôtre : nous ne voyons que des totaux,
+jamais quoi que ce soit qui puisse remonter jusqu'à vous. Nous l'utilisons pour
+la correction de bugs et l'optimisation des performances.
+
+- **iPhone :** contrôlé par « Partager l'analyse de l'app ». Désactivez via
+  **Réglages → Confidentialité et sécurité → Analyse et améliorations**.
+- **Android :** contrôlé par « Utilisation et diagnostics ». Désactivez via
+  **Paramètres → Google → Utilisation et diagnostics** (le nom exact varie
+  légèrement selon les fabricants).
 
 ### Sentry (uniquement si vous avez activé les rapports de plantage)
 Sentry est un service de surveillance d'erreurs qui nous aide à identifier et corriger
@@ -83,7 +109,7 @@ les bugs dans JacArrow. Sentry ne reçoit des données que si vous y avez
 
 Une fois activé, les éléments suivants sont envoyés aux serveurs européens de Sentry (Allemagne) :
 - Traces de pile de plantage (noms de fichiers, numéros de ligne, types d'exception)
-- Modèle d'appareil et version iOS
+- Modèle d'appareil et version du système d'exploitation (iOS ou Android)
 - Version de l'app et numéro de build
 
 Nous n'envoyons **pas** :
@@ -100,10 +126,11 @@ La [politique de confidentialité de Sentry](https://sentry.io/privacy/) s'appli
 ## Ce que nous NE collectons PAS
 
 - Aucun compte utilisateur, adresse e-mail ou mot de passe
+- Aucun stockage dans le cloud, aucune sauvegarde sur nos serveurs, aucune synchronisation entre appareils
 - Aucune donnée GPS ou de localisation
 - Aucun accès aux contacts, au calendrier, à l'appareil photo ou au microphone
-- Aucun traqueur tiers (Firebase, Google Analytics, Facebook Pixel, etc.)
-- Aucun identifiant publicitaire (IDFA)
+- Aucun traqueur tiers (Firebase Analytics, Google Analytics, Facebook Pixel, etc.)
+- Aucun identifiant publicitaire (IDFA sur iOS, identifiant publicitaire sur Android)
 - Aucun suivi vidéo ni empreinte d'appareil
 
 ---
@@ -120,23 +147,28 @@ Vous avez une visibilité totale via :
 
 **Droit à la portabilité des données (Art. 20) :** Utilisez
 **Réglages → Exporter mes données** pour télécharger toutes vos données sous forme de fichier
-JSON. Le fichier peut être partagé via la feuille de partage iOS vers e-mail, AirDrop, Fichiers, etc.
-C'est l'intégralité de votre historique de tir dans un format standard.
+JSON. Le fichier peut être partagé via le menu de partage de votre téléphone vers
+e-mail, AirDrop, Fichiers, Google Drive, etc. C'est l'intégralité de votre
+historique de tir dans un format standard.
 
 **Droit à l'effacement (Art. 17) :**
 - *Supprimer une séance individuelle :* balayez la séance sur l'écran d'accueil → Supprimer
-- *Supprimer toutes les données :* désinstallez JacArrow — iOS supprime automatiquement
-  toute la base de données SQLite et AsyncStorage. Le reçu RevenueCat (si vous
-  avez acheté Pro) est conservé par Apple et RevenueCat pour les besoins de remboursement et de
-  support.
+- *Supprimer toutes les données :* désinstallez JacArrow — iOS comme Android
+  suppriment automatiquement toute la base de données SQLite et AsyncStorage. Le
+  reçu d'un achat Pro est conservé par la boutique où vous avez acheté (Apple ou
+  Google) et par RevenueCat pour les besoins de remboursement et de support.
 
 **Droit à la limitation et d'opposition (Art. 18–21) :** JacArrow ne prend
 aucune décision automatisée à votre sujet. Le moteur Smart Insights analyse uniquement
 vos propres données d'entraînement localement sur votre appareil et présente
 des observations — il ne prend aucune décision en votre nom.
 
-**Droit de retirer son consentement (Art. 7) :** L'opt-in d'Apple Analytics se contrôle
-via les Réglages iOS. Les données RevenueCat sont supprimées lorsque vous supprimez votre identifiant Apple.
+**Droit de retirer son consentement (Art. 7) :** Le consentement aux analyses
+d'Apple et de Google se contrôle dans les réglages de votre téléphone (voir
+« Analyses et données de plantage du système d'exploitation » ci-dessus). Les
+rapports de plantage vers Sentry se désactivent dans JacArrow via
+**Réglages → Confidentialité**. Les données RevenueCat sont supprimées lorsque
+vous supprimez l'identifiant Apple ou le compte Google utilisé pour l'achat.
 
 ---
 

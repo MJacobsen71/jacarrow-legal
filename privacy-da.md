@@ -1,6 +1,6 @@
 # Privatlivspolitik — JacArrow
 
-**Sidst opdateret:** 2026-05-25
+**Sidst opdateret:** 2026-08-22
 **Dataansvarlig:** Morten Jacobsen, Norge
 **Kontakt:** galge.vender.0a@icloud.com
 
@@ -13,9 +13,13 @@ servere, der modtager dine skud, pas eller mål. Når du afinstallerer
 appen, forsvinder alle data.
 
 De eneste tredjeparter, der modtager information, er:
-- **Apple** — håndterer App Store-køb og notifikationer
+- **Apple** (hvis du bruger appen på iPhone) — håndterer App Store-køb
+- **Google** (hvis du bruger appen på Android) — håndterer Google Play-køb
 - **RevenueCat** (efter du har købt Pro) — verificerer dit køb
 - **Sentry** (kun hvis du aktiverer nedbrudsrapporter) — modtager anonyme nedbrudsdata, så vi kan rette fejl
+
+Hvilken af Apple og Google der er involveret, afhænger af hvilken butik du
+hentede appen fra. Ingen af dem er involveret i selve dine skydedata.
 
 Du har fulde GDPR-rettigheder til indsigt, sletning og dataportabilitet.
 
@@ -28,52 +32,65 @@ Du har fulde GDPR-rettigheder til indsigt, sletning og dataportabilitet.
 - **Indstillinger:** valgt sprog, tema, skydehånd, konkurrenceklasse, notifikations-indstillinger
 - **App-historik:** coach-mark-status (hvilke tips du har set), tutorial-fuldført-flag
 
-Alle disse data gemmes i en SQLite-database og AsyncStorage på din iPhone.
-Hverken JacArrow eller nogen tredjepart har adgang til disse data.
+Alle disse data gemmes i en SQLite-database og AsyncStorage på din telefon.
+Hverken JacArrow eller nogen tredjepart har adgang til disse data. Der er ingen
+brugerkonto, ingen skylagring og ingen synkronisering mellem enheder — dine data
+bliver på den enhed, du registrerede dem på.
 
-### iCloud (kun når iCloud Drive er aktiveret)
-JacArrow planlægger at bruge iCloud Key-Value Storage til ét bestemt formål:
-at huske, om du allerede har startet prøveperioden. Dette synkroniseres
-via din iCloud-konto for at forhindre, at afinstallation + geninstallation
-giver en ny gratis prøveperiode.
+### Notifikationer (planlægges lokalt på enheden)
+JacArrow kan sende dig notifikationer: at du har sat personlig rekord, at
+prøveperioden nærmer sig sin afslutning, eller påmindelser om dine mål.
 
-- Apple er databehandler (vores aftale er underlagt deres standardvilkår)
-- De gemte værdier er **kun**: dato for prøveperiodens start og en «prøve-brugt»-status
-- Funktionen aktiveres, når vi lancerer Pro-modellen (Fase 4b)
+Alle disse **planlægges lokalt på din enhed** og beregnes ud fra data, der aldrig
+forlader den. Vi har ingen server, der sender notifikationer, og vi modtager
+aldrig et notifikations-token, en leveringsbekræftelse eller nogen oplysning om,
+hvad du gjorde med en notifikation. Selve leveringen håndteres af telefonens
+operativsystem (iOS eller Android), præcis som en alarm du selv har sat.
 
-Hvis du har deaktiveret iCloud Drive, eller deaktiveret iCloud Drive specifikt
-for JacArrow, bruges iCloud ikke.
+Du kan slå notifikationer fra når som helst — både i JacArrow under
+**Indstillinger → Notifikationer** og i telefonens egne indstillinger.
 
 ---
 
 ## Tredjeparter
 
-### Apple App Store
-Alle in-app-køb håndteres af Apple. Vi modtager aldrig kortoplysninger,
-adresser eller andre betalingsdetaljer. Apples
+### Apple App Store (på iPhone)
+Har du hentet JacArrow fra App Store, håndteres alle in-app-køb af Apple. Vi
+modtager aldrig kortoplysninger, adresser eller andre betalingsdetaljer. Apples
 [privatlivspolitik](https://www.apple.com/dk/legal/privacy/) gælder for
 købsflowet.
 
-### Apple Push Notification Service (APNS)
-JacArrow sender lokale notifikationer (PR opnået, prøveperiode udløber,
-målpåmindelser). For at levere dem registrerer iOS et anonymt enheds-token
-hos Apple. Vi har ingen servere, der sender push-beskeder — alle notifikationer
-genereres lokalt på din enhed baseret på app-tilstand.
+### Google Play (på Android)
+Har du hentet JacArrow fra Google Play, håndteres alle in-app-køb af Google via
+Google Play Billing. Vi modtager aldrig kortoplysninger, adresser eller andre
+betalingsdetaljer — vi får kun at vide, at et køb er gennemført og gyldigt.
+Googles [privatlivspolitik](https://policies.google.com/privacy?hl=da) gælder
+for købsflowet.
+
+Bemærk, at Google Play — i modsætning til App Store — **ikke** deler et
+in-app-køb videre til en familiegruppe. Det er en forskel mellem butikkerne,
+ikke noget vi kan styre.
 
 ### RevenueCat (kun efter Pro-køb)
 Når du køber JacArrow Pro, registrerer RevenueCat din kvittering og et
 anonymt `appUserId` (UUID genereret på din enhed). Dette er nødvendigt for,
 at appen kan verificere dit køb ved senere brug og ved «Gendan
-køb». RevenueCats
+køb». Kvitteringen kommer fra App Store eller Google Play, afhængigt af hvor du
+købte. RevenueCats
 [privatlivspolitik](https://www.revenuecat.com/privacy) gælder. Vi sender aldrig
 dit navn, e-mail eller andre personoplysninger.
 
-### Apple Analytics / nedbrudsrapporter
-Hvis du har aktiveret «Del app-analyse» i iOS-indstillingerne, sender Apple
-anonyme aggregerede data om brug og nedbrud til udvikleren.
-JacArrow bruger dette til fejlrettelse og ydeevneoptimering. Du kan
-deaktivere dette via:
-**iOS-indstillinger → Anonymitet og sikkerhed → Analyse og forbedringer**.
+### Analyse- og nedbrudsdata fra operativsystemet
+Både Apple og Google kan sende udviklere anonyme, aggregerede tal om brug og
+nedbrud — men kun hvis **du** har slået det til i telefonens egne indstillinger.
+Det er butikkens funktion, ikke vores: vi ser kun summer, aldrig noget der kan
+spores tilbage til dig. Vi bruger det til fejlrettelse og ydeevneoptimering.
+
+- **iPhone:** styres af «Del app-analyse». Slå fra via
+  **Indstillinger → Anonymitet og sikkerhed → Analyse og forbedringer**.
+- **Android:** styres af «Brug og diagnosticering». Slå fra via
+  **Indstillinger → Google → Brug og diagnosticering** (navnet varierer en smule
+  mellem producenter).
 
 ### Sentry (kun hvis du har aktiveret nedbrudsrapporter)
 Sentry er en fejlovervågningstjeneste, der hjælper os med at identificere og rette
@@ -83,7 +100,7 @@ fejl i JacArrow. Sentry modtager kun data, hvis du har givet
 
 Når den er slået til, sendes følgende til Sentrys EU-servere (Tyskland):
 - Nedbruds-stack traces (filnavne, linjenumre, exception-typer)
-- Enhedsmodel og iOS-version
+- Enhedsmodel og operativsystemversion (iOS eller Android)
 - App-version og build-nummer
 
 Vi sender **ikke**:
@@ -100,10 +117,11 @@ Sentrys [privatlivspolitik](https://sentry.io/privacy/) gælder for modtagne dat
 ## Det vi IKKE indsamler
 
 - Ingen brugerkonto, e-mailadresse eller adgangskode
+- Ingen skylagring, ingen backup til vores servere, ingen synkronisering mellem enheder
 - Ingen GPS- eller positionsdata
 - Ingen adgang til kontakter, kalender, kamera eller mikrofon
-- Ingen tredjeparts-trackere (Firebase, Google Analytics, Facebook Pixel osv.)
-- Ingen reklame-identifikatorer (IDFA)
+- Ingen tredjeparts-trackere (Firebase Analytics, Google Analytics, Facebook Pixel osv.)
+- Ingen reklame-identifikatorer (IDFA på iOS, annonce-id på Android)
 - Ingen video-tracking eller enheds-fingeraftryk
 
 ---
@@ -120,22 +138,26 @@ Du har fuld indsigt via:
 
 **Ret til dataportabilitet (Art. 20):** Brug
 **Indstillinger → Eksportér mine data** for at downloade alle dine data som
-en JSON-fil. Filen kan deles via iOS' delemenu til e-mail, AirDrop, Filer osv.
-Dette er din komplette skydehistorik i et standardformat.
+en JSON-fil. Filen kan deles via telefonens delemenu til e-mail, AirDrop, Filer,
+Google Drive osv. Dette er din komplette skydehistorik i et standardformat.
 
 **Ret til sletning (Art. 17):**
 - *Slet enkelt pas:* stryg passet på hjemmeskærmen → Slet
-- *Slet alle data:* afinstallér JacArrow — iOS sletter automatisk hele
-  SQLite-databasen og AsyncStorage. RevenueCat-kvittering (hvis du har
-  købt Pro) opbevares af Apple og RevenueCat til refusion og support.
+- *Slet alle data:* afinstallér JacArrow — både iOS og Android sletter
+  automatisk hele SQLite-databasen og AsyncStorage. Kvitteringen for et Pro-køb
+  opbevares af den butik, du købte i (Apple eller Google), og af RevenueCat til
+  refusion og support.
 
 **Ret til begrænsning og indsigelse (Art. 18–21):** JacArrow træffer
 ingen automatiserede beslutninger om dig. Smart Insights-motoren analyserer kun
 dine egne træningsdata lokalt på din enhed og præsenterer
 observationer — den træffer ingen beslutninger på dine vegne.
 
-**Ret til at trække samtykke tilbage (Art. 7):** Apple Analytics-opt-in styres
-via iOS-indstillingerne. RevenueCat-data slettes, når du sletter dit Apple-ID.
+**Ret til at trække samtykke tilbage (Art. 7):** Analyse-samtykket til Apple og
+Google styres i telefonens egne indstillinger (se «Analyse- og nedbrudsdata fra
+operativsystemet» ovenfor). Nedbrudsrapportering til Sentry slås fra i JacArrow
+under **Indstillinger → Privatliv**. RevenueCat-data slettes, når du sletter det
+Apple-ID eller den Google-konto, købet blev foretaget med.
 
 ---
 

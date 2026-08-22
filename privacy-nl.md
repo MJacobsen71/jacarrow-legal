@@ -1,6 +1,6 @@
 # Privacybeleid — JacArrow
 
-**Laatst bijgewerkt:** 2026-05-25
+**Laatst bijgewerkt:** 2026-08-22
 **Verwerkingsverantwoordelijke:** Morten Jacobsen, Noorwegen
 **Contact:** galge.vender.0a@icloud.com
 
@@ -13,9 +13,13 @@ servers die je schoten, sessies of doelen ontvangen. Wanneer je
 de app verwijdert, zijn alle data weg.
 
 De enige derde partijen die informatie ontvangen, zijn:
-- **Apple** — verwerkt App Store-aankopen en meldingen
+- **Apple** (als je de app op iPhone gebruikt) — verwerkt App Store-aankopen
+- **Google** (als je de app op Android gebruikt) — verwerkt Google Play-aankopen
 - **RevenueCat** (na je Pro-aankoop) — verifieert je aankoop
 - **Sentry** (alleen als je crashrapporten inschakelt) — ontvangt anonieme crashgegevens om ons te helpen bugs te verhelpen
+
+Welke van de twee — Apple of Google — betrokken is, hangt af van de store waar je
+de app hebt gedownload. Geen van beide is betrokken bij je schietdata zelf.
 
 Je hebt alle AVG-rechten op inzage, verwijdering en dataportabiliteit.
 
@@ -28,52 +32,69 @@ Je hebt alle AVG-rechten op inzage, verwijdering en dataportabiliteit.
 - **Instellingen:** gekozen taal, thema, schiethand, wedstrijdklasse, meldingsopties
 - **App-geschiedenis:** coach-mark-status (welke tips je hebt gezien), tutorial-voltooid-vlaggen
 
-Al deze data worden opgeslagen in een SQLite-database en AsyncStorage op je iPhone.
-Noch JacArrow noch een derde partij heeft toegang tot deze data.
+Al deze data worden opgeslagen in een SQLite-database en AsyncStorage op je
+telefoon. Noch JacArrow noch een derde partij heeft toegang tot deze data. Er is
+geen gebruikersaccount, geen cloudopslag en geen synchronisatie tussen
+apparaten — je data blijft op het apparaat waarop je die hebt vastgelegd.
 
-### iCloud (alleen wanneer iCloud Drive is ingeschakeld)
-JacArrow is van plan iCloud Key-Value Storage te gebruiken voor één specifiek doel:
-onthouden of je de proefperiode eerder bent gestart. Dit synchroniseert
-via je iCloud-account om te voorkomen dat verwijderen + opnieuw installeren
-een nieuwe gratis proefperiode oplevert.
+### Meldingen (lokaal op het apparaat ingepland)
+JacArrow kan je meldingen sturen: dat je een persoonlijk record hebt gezet, dat
+je proefperiode bijna afloopt, of herinneringen over je doelen.
 
-- Apple is de verwerker (onze overeenkomst valt onder hun standaardvoorwaarden)
-- De opgeslagen waarden zijn **alleen**: de startdatum van de proefperiode en een «proef-gebruikt»-status
-- Deze functie wordt geactiveerd zodra we het Pro-model lanceren (Fase 4b)
+Die worden allemaal **lokaal op je apparaat ingepland** en berekend uit data die
+het apparaat nooit verlaat. We hebben geen server die meldingen verstuurt, en we
+ontvangen nooit een meldingstoken, een bezorgbevestiging of enige informatie over
+wat je met een melding hebt gedaan. De bezorging zelf wordt verzorgd door het
+besturingssysteem van je telefoon (iOS of Android), net als bij een wekker die je
+zelf hebt gezet.
 
-Als je iCloud Drive hebt uitgeschakeld, of iCloud Drive specifiek voor
-JacArrow hebt uitgeschakeld, wordt iCloud niet gebruikt.
+Je kunt meldingen op elk moment uitschakelen — zowel in JacArrow via
+**Instellingen → Meldingen** als in de instellingen van je telefoon.
 
 ---
 
 ## Derde partijen
 
-### Apple App Store
-Alle in-app-aankopen worden afgehandeld door Apple. We ontvangen nooit kaartgegevens,
-adressen of andere betalingsgegevens. Apples
+### Apple App Store (op iPhone)
+Heb je JacArrow uit de App Store gedownload, dan worden alle in-app-aankopen
+afgehandeld door Apple. We ontvangen nooit kaartgegevens, adressen of andere
+betalingsgegevens. Apples
 [privacybeleid](https://www.apple.com/nl/legal/privacy/) is van toepassing op het
 aankoopproces.
 
-### Apple Push Notification Service (APNS)
-JacArrow verstuurt lokale meldingen (PR behaald, einde proefperiode,
-doelherinneringen). Om deze te bezorgen registreert iOS een anoniem apparaattoken
-bij Apple. We hebben geen servers die push-berichten versturen — alle meldingen
-worden lokaal op je apparaat gegenereerd op basis van de app-status.
+### Google Play (op Android)
+Heb je JacArrow uit Google Play gedownload, dan worden alle in-app-aankopen
+afgehandeld door Google via Google Play Billing. We ontvangen nooit kaartgegevens,
+adressen of andere betalingsgegevens — we horen alleen dat een aankoop is
+voltooid en geldig is. Het
+[privacybeleid van Google](https://policies.google.com/privacy?hl=nl) is van
+toepassing op het aankoopproces.
+
+Merk op dat Google Play, anders dan de App Store, een in-app-aankoop **niet**
+deelt met een gezinsgroep. Dat is een verschil tussen de stores, niet iets wat
+wij kunnen bepalen.
 
 ### RevenueCat (alleen na Pro-aankoop)
 Wanneer je JacArrow Pro koopt, registreert RevenueCat je bonnetje en een
 anonieme `appUserId` (UUID gegenereerd op je apparaat). Dit is nodig om
 de app je aankoop te laten verifiëren bij later gebruik en bij «Aankopen
-herstellen». RevenueCats
+herstellen». Het bonnetje komt van de App Store of Google Play, afhankelijk van
+waar je hebt gekocht. RevenueCats
 [privacybeleid](https://www.revenuecat.com/privacy) is van toepassing. We sturen nooit
 je naam, e-mail of andere persoonsgegevens.
 
-### Apple Analytics / crashrapporten
-Als je «App-analyse delen» hebt ingeschakeld in de iOS-instellingen, stuurt Apple
-anonieme geaggregeerde data over gebruik en crashes naar de ontwikkelaar.
-JacArrow gebruikt dit voor bugfixes en prestatie-optimalisatie. Je kunt
-dit uitschakelen via:
-**iOS-instellingen → Privacy en beveiliging → Analyse en verbeteringen**.
+### Analyse- en crashgegevens van het besturingssysteem
+Zowel Apple als Google kunnen ontwikkelaars anonieme, geaggregeerde cijfers over
+gebruik en crashes sturen — maar alleen als **jij** dat hebt aangezet in de
+instellingen van je telefoon. Dat is een functie van de store, niet van ons: wij
+zien alleen totalen, nooit iets dat naar jou te herleiden is. We gebruiken het
+voor bugfixes en prestatie-optimalisatie.
+
+- **iPhone:** geregeld via «App-analyse delen». Uitschakelen via
+  **Instellingen → Privacy en beveiliging → Analyse en verbeteringen**.
+- **Android:** geregeld via «Gebruik en diagnostische gegevens». Uitschakelen via
+  **Instellingen → Google → Gebruik en diagnostische gegevens** (de precieze naam
+  verschilt licht per fabrikant).
 
 ### Sentry (alleen als je crashrapporten hebt ingeschakeld)
 Sentry is een foutmonitoringdienst die ons helpt bugs in JacArrow te identificeren
@@ -83,7 +104,7 @@ toestemming** voor hebt gegeven via **Instellingen → Privacy → Crashrapporte
 
 Wanneer ingeschakeld wordt het volgende naar Sentry's EU-servers (Duitsland) gestuurd:
 - Crash-stack traces (bestandsnamen, regelnummers, exception-typen)
-- Apparaatmodel en iOS-versie
+- Apparaatmodel en versie van het besturingssysteem (iOS of Android)
 - App-versie en build-nummer
 
 We sturen **niet**:
@@ -100,10 +121,11 @@ Het [privacybeleid van Sentry](https://sentry.io/privacy/) is van toepassing op 
 ## Wat we NIET verzamelen
 
 - Geen gebruikersaccount, e-mailadres of wachtwoord
+- Geen cloudopslag, geen back-up naar onze servers, geen synchronisatie tussen apparaten
 - Geen GPS- of locatiegegevens
 - Geen toegang tot contacten, agenda, camera of microfoon
-- Geen trackers van derden (Firebase, Google Analytics, Facebook Pixel enz.)
-- Geen advertentie-identificatoren (IDFA)
+- Geen trackers van derden (Firebase Analytics, Google Analytics, Facebook Pixel enz.)
+- Geen advertentie-identificatoren (IDFA op iOS, advertentie-ID op Android)
 - Geen video-tracking of device fingerprinting
 
 ---
@@ -120,22 +142,28 @@ Je hebt volledige inzage via:
 
 **Recht op dataportabiliteit (Art. 20):** Gebruik
 **Instellingen → Mijn data exporteren** om al je data als JSON-bestand
-te downloaden. Het bestand kan via het iOS-deelvenster gedeeld worden naar e-mail, AirDrop, Bestanden enz.
-Dit is je complete schietgeschiedenis in een standaardformaat.
+te downloaden. Het bestand kan via het deelvenster van je telefoon gedeeld worden
+naar e-mail, AirDrop, Bestanden, Google Drive enz. Dit is je complete
+schietgeschiedenis in een standaardformaat.
 
 **Recht op wissen (Art. 17):**
 - *Individuele sessie verwijderen:* veeg de sessie op het startscherm → Verwijderen
-- *Alle data verwijderen:* deïnstalleer JacArrow — iOS verwijdert automatisch de hele
-  SQLite-database en AsyncStorage. Het RevenueCat-bonnetje (als je
-  Pro hebt gekocht) wordt door Apple en RevenueCat bewaard voor terugbetaling en support.
+- *Alle data verwijderen:* deïnstalleer JacArrow — zowel iOS als Android
+  verwijderen automatisch de hele SQLite-database en AsyncStorage. Het bonnetje
+  van een Pro-aankoop wordt bewaard door de store waar je hebt gekocht (Apple of
+  Google) en door RevenueCat voor terugbetaling en support.
 
 **Recht op beperking en bezwaar (Art. 18–21):** JacArrow neemt
 geen geautomatiseerde beslissingen over jou. De Smart Insights-engine analyseert alleen
 je eigen trainingsdata lokaal op je apparaat en presenteert
 observaties — hij neemt geen beslissingen namens jou.
 
-**Recht om toestemming in te trekken (Art. 7):** De opt-in voor Apple Analytics wordt
-beheerd via de iOS-instellingen. RevenueCat-data wordt verwijderd wanneer je je Apple ID verwijdert.
+**Recht om toestemming in te trekken (Art. 7):** De analysetoestemming voor Apple
+en Google wordt beheerd in de instellingen van je telefoon (zie «Analyse- en
+crashgegevens van het besturingssysteem» hierboven). Crashrapportage naar Sentry
+schakel je uit in JacArrow via **Instellingen → Privacy**. RevenueCat-data wordt
+verwijderd wanneer je de Apple ID of het Google-account verwijdert waarmee de
+aankoop is gedaan.
 
 ---
 

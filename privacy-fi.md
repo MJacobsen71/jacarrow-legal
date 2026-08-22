@@ -1,6 +1,6 @@
 # Tietosuojakäytäntö — JacArrow
 
-**Viimeksi päivitetty:** 2026-05-25
+**Viimeksi päivitetty:** 2026-08-22
 **Rekisterinpitäjä:** Morten Jacobsen, Norja
 **Yhteystiedot:** galge.vender.0a@icloud.com
 
@@ -13,9 +13,13 @@ palvelimia, jotka vastaanottaisivat ammuntojasi, harjoituksiasi tai tavoitteitas
 poistat sovelluksen, kaikki tiedot katoavat.
 
 Ainoat kolmannet osapuolet, jotka saavat tietoja, ovat:
-- **Apple** — käsittelee App Store -ostot ja ilmoitukset
+- **Apple** (jos käytät sovellusta iPhonella) — käsittelee App Store -ostot
+- **Google** (jos käytät sovellusta Androidilla) — käsittelee Google Play -ostot
 - **RevenueCat** (Pro-oston jälkeen) — varmistaa ostosi
 - **Sentry** (vain jos otat kaatumisraportit käyttöön) — vastaanottaa anonyymejä kaatumistietoja, jotta voimme korjata virheitä
+
+Kumpi näistä — Apple vai Google — on osallisena, riippuu siitä, mistä kaupasta
+latasit sovelluksen. Kumpikaan ei ole osallisena itse ammuntatiedoissasi.
 
 Sinulla on täydet GDPR-oikeudet pääsyyn, poistoon ja tietojen siirrettävyyteen.
 
@@ -28,52 +32,68 @@ Sinulla on täydet GDPR-oikeudet pääsyyn, poistoon ja tietojen siirrettävyyte
 - **Asetukset:** valittu kieli, teema, ampumakäsi, kilpailuluokka, ilmoitusasetukset
 - **Sovellushistoria:** coach-mark-tila (mitä vinkkejä olet nähnyt), tutoriaali-suoritettu-liput
 
-Kaikki nämä tiedot tallennetaan SQLite-tietokantaan ja AsyncStorageen iPhonellesi.
-Sen enempää JacArrowilla kuin millään kolmannella osapuolella ei ole pääsyä näihin tietoihin.
+Kaikki nämä tiedot tallennetaan SQLite-tietokantaan ja AsyncStorageen
+puhelimellesi. Sen enempää JacArrowilla kuin millään kolmannella osapuolella ei
+ole pääsyä näihin tietoihin. Käyttäjätiliä ei ole, pilvitallennusta ei ole eikä
+laitteiden välistä synkronointia ole — tietosi pysyvät sillä laitteella, jolle
+ne kirjasit.
 
-### iCloud (vain kun iCloud Drive on käytössä)
-JacArrow aikoo käyttää iCloud Key-Value Storagea yhteen tarkkaan tarkoitukseen:
-muistamaan, oletko aiemmin aloittanut kokeilujakson. Tämä synkronoituu
-iCloud-tilisi kautta estääkseen sen, että poistaminen + uudelleenasennus
-antaisi uuden ilmaisen kokeilujakson.
+### Ilmoitukset (ajastetaan paikallisesti laitteella)
+JacArrow voi lähettää sinulle ilmoituksia: että olet tehnyt henkilökohtaisen
+ennätyksen, että kokeilujaksosi on päättymässä, tai muistutuksia tavoitteistasi.
 
-- Apple on tietojenkäsittelijä (sopimuksemme noudattaa heidän vakioehtojaan)
-- Tallennetut arvot ovat **vain**: kokeilun aloituspäivä ja «kokeilu käytetty» -tila
-- Tämä ominaisuus aktivoituu, kun lanseeraamme Pro-mallin (Vaihe 4b)
+Kaikki nämä **ajastetaan paikallisesti laitteellasi** ja lasketaan tiedoista,
+jotka eivät koskaan poistu siltä. Meillä ei ole palvelinta, joka lähettäisi
+ilmoituksia, emmekä koskaan vastaanota ilmoitustunnusta, toimitusvahvistusta tai
+mitään tietoa siitä, mitä teit ilmoitukselle. Itse toimituksen hoitaa puhelimen
+käyttöjärjestelmä (iOS tai Android), täsmälleen kuten itse asettamasi herätys.
 
-Jos olet poistanut iCloud Driven käytöstä tai poistanut iCloud Driven käytöstä erityisesti
-JacArrowilta, iCloudia ei käytetä.
+Voit ottaa ilmoitukset pois käytöstä milloin tahansa — sekä JacArrowissa kohdasta
+**Asetukset → Ilmoitukset** että puhelimen omista asetuksista.
 
 ---
 
 ## Kolmannet osapuolet
 
-### Apple App Store
-Kaikki sovelluksen sisäiset ostot hoitaa Apple. Emme koskaan vastaanota korttitietoja,
-osoitteita tai muita maksutietoja. Applen
-[tietosuojakäytäntö](https://www.apple.com/fi/legal/privacy/) koskee
+### Apple App Store (iPhonella)
+Jos latasit JacArrowin App Storesta, kaikki sovelluksen sisäiset ostot hoitaa
+Apple. Emme koskaan vastaanota korttitietoja, osoitteita tai muita maksutietoja.
+Applen [tietosuojakäytäntö](https://www.apple.com/fi/legal/privacy/) koskee
 ostoprosessia.
 
-### Apple Push Notification Service (APNS)
-JacArrow lähettää paikallisia ilmoituksia (PE saavutettu, kokeilujakson päättyminen,
-tavoitemuistutukset). Niiden toimittamiseksi iOS rekisteröi anonyymin laitetunnuksen
-Applelle. Meillä ei ole palvelimia, jotka lähettäisivät push-viestejä — kaikki ilmoitukset
-luodaan paikallisesti laitteellasi sovelluksen tilan perusteella.
+### Google Play (Androidilla)
+Jos latasit JacArrowin Google Playstä, kaikki sovelluksen sisäiset ostot hoitaa
+Google Google Play Billingin kautta. Emme koskaan vastaanota korttitietoja,
+osoitteita tai muita maksutietoja — meille kerrotaan vain, että osto on tehty ja
+voimassa. Googlen
+[tietosuojakäytäntö](https://policies.google.com/privacy?hl=fi) koskee
+ostoprosessia.
+
+Huomaa, että Google Play **ei** — toisin kuin App Store — jaa sovelluksen
+sisäistä ostoa perheryhmälle. Se on kauppojen välinen ero, ei jotain mihin me
+voimme vaikuttaa.
 
 ### RevenueCat (vain Pro-oston jälkeen)
 Kun ostat JacArrow Pron, RevenueCat tallentaa kuittisi ja
 anonyymin `appUserId`:n (laitteellasi luotu UUID). Tämä on tarpeen
 sovelluksen ostosi varmistamiseen myöhemmässä käytössä ja «Palauta
-ostot» -toiminnossa. RevenueCatin
+ostot» -toiminnossa. Kuitti tulee App Storesta tai Google Playstä sen mukaan,
+mistä ostit. RevenueCatin
 [tietosuojakäytäntö](https://www.revenuecat.com/privacy) koskee tätä. Emme koskaan lähetä
 nimeäsi, sähköpostiosoitettasi tai muita henkilötietoja.
 
-### Apple Analytics / kaatumisraportit
-Jos olet ottanut käyttöön «Jaa sovelluksen analyysit» iOS-asetuksissa, Apple lähettää
-anonyymejä koostettuja tietoja käytöstä ja kaatumisista kehittäjälle.
-JacArrow käyttää tätä virheenkorjaukseen ja suorituskyvyn optimointiin. Voit
-poistaa tämän käytöstä:
-**iOS-asetukset → Tietosuoja ja turvallisuus → Analytiikka ja parannukset**.
+### Käyttöjärjestelmän analytiikka- ja kaatumistiedot
+Sekä Apple että Google voivat lähettää kehittäjille anonyymejä, koostettuja
+lukuja käytöstä ja kaatumisista — mutta vain jos **sinä** olet ottanut sen
+käyttöön puhelimen omista asetuksista. Se on kaupan toiminto, ei meidän: näemme
+vain summia, emme koskaan mitään sinuun jäljitettävää. Käytämme sitä
+virheenkorjaukseen ja suorituskyvyn optimointiin.
+
+- **iPhone:** hallitaan «Jaa sovelluksen analyysit» -asetuksella. Ota pois
+  käytöstä: **Asetukset → Tietosuoja ja turvallisuus → Analytiikka ja parannukset**.
+- **Android:** hallitaan «Käyttö ja diagnostiikka» -asetuksella. Ota pois
+  käytöstä: **Asetukset → Google → Käyttö ja diagnostiikka** (nimi vaihtelee
+  hieman valmistajien välillä).
 
 ### Sentry (vain jos olet ottanut kaatumisraportit käyttöön)
 Sentry on virheidenseurantapalvelu, joka auttaa meitä tunnistamaan ja korjaamaan
@@ -83,7 +103,7 @@ virheitä JacArrowissa. Sentry vastaanottaa tietoja vain, jos olet antanut siihe
 
 Kun ominaisuus on käytössä, Sentryn EU-palvelimille (Saksa) lähetetään seuraavat:
 - Kaatumisten pinojäljet (tiedostonimet, rivinumerot, poikkeustyypit)
-- Laitemalli ja iOS-versio
+- Laitemalli ja käyttöjärjestelmän versio (iOS tai Android)
 - Sovellusversio ja build-numero
 
 Emme lähetä:
@@ -100,10 +120,11 @@ Sentryn [tietosuojakäytäntö](https://sentry.io/privacy/) koskee vastaanotettu
 ## Mitä EMME kerää
 
 - Ei käyttäjätiliä, sähköpostiosoitetta tai salasanaa
+- Ei pilvitallennusta, ei varmuuskopiointia palvelimillemme, ei laitteiden välistä synkronointia
 - Ei GPS- tai sijaintitietoja
 - Ei pääsyä yhteystietoihin, kalenteriin, kameraan tai mikrofoniin
-- Ei kolmansien osapuolten seurantoja (Firebase, Google Analytics, Facebook Pixel jne.)
-- Ei mainostunnisteita (IDFA)
+- Ei kolmansien osapuolten seurantoja (Firebase Analytics, Google Analytics, Facebook Pixel jne.)
+- Ei mainostunnisteita (IDFA iOS:ssä, mainostunnus Androidissa)
 - Ei video-seurantaa eikä laitteen sormenjälkeä
 
 ---
@@ -120,22 +141,27 @@ Sinulla on täysi näkyvyys:
 
 **Oikeus tietojen siirrettävyyteen (Art. 20):** Käytä
 **Asetukset → Vie tietoni** ladataksesi kaikki tietosi JSON-tiedostona. Tiedosto
-voidaan jakaa iOS-jakovalikon kautta sähköpostiin, AirDropiin, Tiedostoihin jne.
-Tämä on täydellinen ammuntahistoriasi standardimuodossa.
+voidaan jakaa puhelimen jakovalikon kautta sähköpostiin, AirDropiin,
+Tiedostoihin, Google Driveen jne. Tämä on täydellinen ammuntahistoriasi
+standardimuodossa.
 
 **Oikeus tietojen poistamiseen (Art. 17):**
 - *Poista yksittäinen harjoitus:* pyyhkäise harjoitusta aloitusnäytössä → Poista
-- *Poista kaikki tiedot:* poista JacArrow — iOS poistaa automaattisesti koko
-  SQLite-tietokannan ja AsyncStoragen. RevenueCat-kuitti (jos olet
-  ostanut Pron) säilyy Applella ja RevenueCatilla palautus- ja tukitarpeisiin.
+- *Poista kaikki tiedot:* poista JacArrow — sekä iOS että Android poistavat
+  automaattisesti koko SQLite-tietokannan ja AsyncStoragen. Pro-oston kuitti
+  säilyy siinä kaupassa, josta ostit (Apple tai Google), ja RevenueCatilla
+  palautus- ja tukitarpeisiin.
 
 **Oikeus käsittelyn rajoittamiseen ja vastustamiseen (Art. 18–21):** JacArrow ei tee
 mitään automatisoituja päätöksiä sinusta. Smart Insights -moottori analysoi vain
 omia harjoitustietojasi paikallisesti laitteellasi ja esittää
 havaintoja — se ei tee päätöksiä puolestasi.
 
-**Oikeus peruuttaa suostumus (Art. 7):** Apple Analyticsin opt-in hallitaan
-iOS-asetuksissa. RevenueCat-tiedot poistetaan, kun poistat Apple-ID:si.
+**Oikeus peruuttaa suostumus (Art. 7):** Applen ja Googlen analytiikkasuostumus
+hallitaan puhelimen omista asetuksista (ks. «Käyttöjärjestelmän analytiikka- ja
+kaatumistiedot» yllä). Kaatumisraportointi Sentryyn otetaan pois käytöstä
+JacArrowissa kohdasta **Asetukset → Tietosuoja**. RevenueCat-tiedot poistetaan,
+kun poistat sen Apple-ID:n tai Google-tilin, jolla osto tehtiin.
 
 ---
 

@@ -1,10 +1,10 @@
 # JacArrow
 
-**iOS app for archery. From your first arrow to your hundredth tournament — built for everyone who shoots.**
+**Archery app for iPhone and Android. From your first arrow to your hundredth tournament — built for everyone who shoots.**
 
-WA Book 3 compliant scoring, 10 languages, atmospheric themes, in-depth statistics. Offline-first — your data lives on your iPhone.
+WA Book 3 compliant scoring, 10 languages, atmospheric themes, in-depth statistics. Offline-first — your data lives on your phone.
 
-*iOS-app for bueskyting. Fra første pil til hundrede stevne — laget for alle som skyter. WA Book 3-kompatibel scoring, 10 språk, atmosfæriske temaer, dyp statistikk. Offline-first — dataene dine bor på din iPhone.*
+*Bueskyting-app for iPhone og Android. Fra første pil til hundrede stevne — laget for alle som skyter. WA Book 3-kompatibel scoring, 10 språk, atmosfæriske temaer, dyp statistikk. Offline-first — dataene dine bor på telefonen din.*
 
 ---
 
@@ -50,4 +50,4 @@ WA Book 3 compliant scoring, 10 languages, atmospheric themes, in-depth statisti
 
 ---
 
-*Last updated: 2026-05-20*
+*Last updated: 2026-08-22*
