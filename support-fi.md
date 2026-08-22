@@ -1,6 +1,6 @@
 # Tuki — JacArrow
 
-**Viimeksi päivitetty:** 2026-05-20
+**Viimeksi päivitetty:** 2026-08-22
 **Kattaa version:** v1.0+
 **Yhteystiedot:** galge.vender.0a@icloud.com
 
@@ -36,31 +36,31 @@ Score-pad-tilassa: napauta score-padin nuolimerkkiä ja valitse uusi arvo.
 
 1. Napauta mitä tahansa Pro-lukittua ominaisuutta (esim. Pro-merkillä lukittu teema)
 2. Paywall ilmestyy painikkeella **Osta Pro (299 NOK)**
-3. Applen vakio-ostodialogi ilmestyy → vahvista Face ID:llä / pääsykoodilla
+3. Kaupan ostoikkuna ilmestyy → vahvista (Face ID tai pääsykoodi iPhonessa, Google-tili Androidissa)
 4. Pro aktivoituu välittömästi — kaikki ominaisuudet avautuvat
 
 **Hinta:** 299 NOK kertaosto, elinikäinen. Ei tilausta, ei toistuvia veloituksia.
 
-### Miten palautan ostot uudella iPhonella?
+### Miten palautan ostot uudessa puhelimessa?
 
-1. Lataa JacArrow uudelle iPhonelle (ilmaisversio)
-2. Kirjaudu sisään samalla Apple-ID:llä, jolla ostit Pron
+1. Lataa JacArrow uuteen puhelimeen (ilmaisversio)
+2. Kirjaudu sisään samalla tilillä, jolla ostit Pron — Apple-ID iPhonessa, Google-tili Androidissa
 3. Avaa JacArrow → **Asetukset → Lisenssi → Palauta ostot**
 4. Pro aktivoituu uudelleen automaattisesti
 
-Jos olet vaihtanut Apple-ID:tä: ota yhteyttä galge.vender.0a@icloud.com, niin autamme.
+Ostoa ei voi siirtää alustalta toiselle: jos ostit Pron iPhonella, se ei ole voimassa Android-puhelimessa, eikä toisinpäin. Kaupat eivät salli sitä. Jos olet vaihtanut Apple-ID:tä tai Google-tiliä: ota yhteyttä galge.vender.0a@icloud.com, niin autamme.
 
 ### Miten vien tietoni?
 
-**Asetukset → Tietoja sovelluksesta → Vie tietoni** → iOS:n jakovalikko avautuu. Valitse AirDrop, Mail, Tiedostot tai minne haluat lähettää JSON-tiedoston.
+**Asetukset → Tietoja sovelluksesta → Vie tietoni** → puhelimen jakovalikko avautuu. Valitse AirDrop, Mail, Tiedostot, Google Drive tai minne haluat lähettää JSON-tiedoston.
 
 JSON sisältää kaikki harjoitukset, kierrokset, nuolet, tavoitteet, jousiasetelmat ja asetukset — täysi siirrettävyys GDPR Art. 20:n mukaisesti.
 
 ### Miten poistan kaikki tietoni?
 
-Poista JacArrow → iOS poistaa automaattisesti koko SQLite-tietokannan ja kaikki asetukset. Laitteelle ei jää jäännöstietoja.
+Poista JacArrow → sekä iOS että Android poistavat automaattisesti koko SQLite-tietokannan ja kaikki asetukset. Laitteelle ei jää jäännöstietoja.
 
-Jos olet ostanut Pron: kuitti säilyy Applella (palautus- ja tukitarpeisiin). Poisto ei vaikuta tuleviin uudelleenasennuksiin — Pro aktivoituu automaattisesti Palauta ostot -toiminnolla.
+Jos olet ostanut Pron: kuitti säilyy siinä kaupassa, josta ostit — Applella tai Googlella (palautus- ja tukitarpeisiin). Poisto ei vaikuta tuleviin uudelleenasennuksiin — Pro aktivoituu automaattisesti Palauta ostot -toiminnolla.
 
 ### Mitä kierrosmuotoja tuetaan?
 
@@ -91,18 +91,20 @@ Kaikki muodot sisältävät virallisen WA Book 3 -yhteensopivuuden: viivasäänt
 
 ### Sovellus kaatuu käynnistyksessä
 
-1. Sammuta iPhone ja käynnistä uudelleen
-2. Jos ongelma jatkuu: poista ja asenna JacArrow uudelleen (ostotietoja EI menetetä — kuitti säilyy Applella)
-3. Lähetä kaatumisloki osoitteeseen galge.vender.0a@icloud.com: **Asetukset → Tietosuoja ja turvallisuus → Analytiikka ja parannukset → Analyysitiedot** → etsi JacArrow-loki → jaa kanssamme
+1. Sammuta puhelin ja käynnistä uudelleen
+2. Jos ongelma jatkuu: poista ja asenna JacArrow uudelleen (ostotietoja EI menetetä — kuitti säilyy kaupassa)
+3. Lähetä meille kuvaus osoitteeseen galge.vender.0a@icloud.com — mitä teit juuri ennen kaatumista ja mikä puhelin sinulla on
 
-Jos olet valinnut jakaa analytiikan kehittäjän kanssa iOS:n kautta, kaatumislokit lähetetään meille automaattisesti.
+**iPhone:** voit etsiä kaatumislokin itse ja liittää sen mukaan: **Asetukset → Tietosuoja ja turvallisuus → Analytiikka ja parannukset → Analytiikkatiedot** → etsi JacArrow-loki → jaa se meille. Jos «Jaa sovelluksen analyysit» on käytössä, saamme kaatumislokit automaattisesti.
+
+**Android:** kaatumiset raportoidaan meille automaattisesti, jos «Käyttö ja diagnostiikka» on käytössä puhelimen asetuksissa. Sinun ei tarvitse tehdä muuta kuin kuvailla, mitä tapahtui.
 
 ### Pistetiedot katosivat päivityksen jälkeen
 
 JacArrow tallentaa kaiken paikallisesti SQLiteen. Päivitykset siirtävät tietokantaa vain eteenpäin — vanhat tiedot muunnetaan uuteen muotoon, niitä ei koskaan poisteta.
 
 Jos koet tietojen katoamista:
-1. Varmista, että olet kirjautunut samalla Apple-ID:llä
+1. Varmista, että olet kirjautunut samalla tilillä kuin ennen (Apple-ID tai Google-tili)
 2. Tarkista **Asetukset → Tietoja sovelluksesta → Versionumero** — onko se viimeisin?
 3. Lähetä meille kuvaus osoitteeseen galge.vender.0a@icloud.com
 
@@ -111,12 +113,12 @@ Meillä on tiukka sääntö, että julkaistut migraatiot ovat muuttumattomia —
 ### Pinch-zoom ei toimi taululla
 
 1. Kokeile kahdella sormella, älä yhdellä
-2. Tarkista, ettei sinulla ole «Vähennä liikettä» päällä **iOS-asetukset → Käytettävyys → Liike** — se voi rajoittaa eleitä joissakin sovelluksissa
+2. Tarkista, ettei liikkeen vähennys ole päällä — **iPhone: Asetukset → Käytettävyys → Liike**, **Android: Asetukset → Saavutettavuus → Poista animaatiot** — se voi rajoittaa eleitä joissakin sovelluksissa
 3. Sulje sovellus kokonaan (pyyhkäise ylöspäin alhaalta, pyyhkäise JacArrow ylöspäin) ja avaa uudelleen
 
 ### Konstellaationäkymä tärisee vetäessä
 
-Tämä oli bugi versioissa v0.28.2 ja aiemmissa — korjattu versiossa v0.28.3. Päivitä sovellus uusimpaan versioon App Storessa.
+Tämä oli bugi versioissa v0.28.2 ja aiemmissa — korjattu versiossa v0.28.3. Päivitä sovellus uusimpaan versioon App Storessa tai Google Playssä.
 
 ---
 
@@ -137,7 +139,7 @@ Lähetä sähköposti osoitteeseen galge.vender.0a@icloud.com:
 - **Mikä meni pieleen** (niin yksityiskohtaisesti kuin pystyt)
 - **Mitä odotit tapahtuvan**
 - **Vaihe vaiheelta** toistettavaksi
-- **iOS-versio** ja **iPhone-malli** (Asetukset → Yleiset → Tietoja)
+- **Käyttöjärjestelmän versio ja puhelinmalli** (iPhone: Asetukset → Yleiset → Tietoja · Android: Asetukset → Tietoja puhelimesta)
 - **JacArrowin versio** (Asetukset → Tietoja sovelluksesta)
 - Kuvakaappaus tarvittaessa
 

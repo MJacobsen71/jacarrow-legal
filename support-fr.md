@@ -1,6 +1,6 @@
 # Support — JacArrow
 
-**Dernière mise à jour :** 2026-05-20
+**Dernière mise à jour :** 2026-08-22
 **Version couverte :** v1.0+
 **Contact :** galge.vender.0a@icloud.com
 
@@ -36,31 +36,31 @@ L'icône 📋 marque les séances saisies manuellement avec le score-pad, sans �
 
 1. Touchez une fonctionnalité verrouillée Pro (ex. un thème avec un badge Pro)
 2. La page d'achat apparaît avec le bouton **Acheter Pro (299 NOK)**
-3. Le modal d'achat standard d'Apple apparaît → confirmez avec Face ID / code
+3. La fenêtre d'achat de la boutique apparaît → confirmez (Face ID / code sur iPhone, compte Google sur Android)
 4. Pro s'active immédiatement — toutes les fonctionnalités se débloquent
 
 **Prix :** 299 NOK en achat unique, à vie. Pas d'abonnement, pas de prélèvement récurrent.
 
-### Comment restaurer les achats sur un nouvel iPhone ?
+### Comment restaurer les achats sur un nouveau téléphone ?
 
-1. Téléchargez JacArrow sur le nouvel iPhone (version gratuite)
-2. Connectez-vous avec le même identifiant Apple utilisé pour acheter Pro
+1. Téléchargez JacArrow sur le nouveau téléphone (version gratuite)
+2. Connectez-vous avec le même compte que celui utilisé pour acheter Pro — identifiant Apple sur iPhone, compte Google sur Android
 3. Ouvrez JacArrow → **Réglages → Licence → Restaurer les achats**
 4. Pro se réactive automatiquement
 
-Si vous avez changé d'identifiant Apple : contactez galge.vender.0a@icloud.com et nous vous aiderons.
+Un achat ne peut pas passer d'une plateforme à l'autre : si vous avez acheté Pro sur iPhone, il ne s'applique pas sur un téléphone Android, et inversement. Les boutiques ne le permettent pas. Si vous avez changé d'identifiant Apple ou de compte Google : contactez galge.vender.0a@icloud.com et nous vous aiderons.
 
 ### Comment exporter mes données ?
 
-**Réglages → À propos de l'app → Exporter mes données** → la feuille de partage iOS apparaît. Choisissez AirDrop, Mail, Fichiers ou tout autre destinataire pour le fichier JSON.
+**Réglages → À propos de l'app → Exporter mes données** → le menu de partage de votre téléphone apparaît. Choisissez AirDrop, Mail, Fichiers, Google Drive ou tout autre destinataire pour le fichier JSON.
 
 Le JSON contient toutes les séances, manches, flèches, objectifs, configurations d'arc et préférences — portabilité complète au titre de l'article 20 du RGPD.
 
 ### Comment supprimer toutes mes données ?
 
-Désinstallez JacArrow → iOS supprime automatiquement toute la base de données SQLite et toutes les préférences. Aucune donnée résiduelle ne reste sur l'appareil.
+Désinstallez JacArrow → iOS comme Android suppriment automatiquement toute la base de données SQLite et toutes les préférences. Aucune donnée résiduelle ne reste sur l'appareil.
 
-Si vous avez acheté Pro : le reçu reste chez Apple (pour les besoins de remboursement et de support). La désinstallation n'affecte pas les réinstallations futures — Pro se réactive automatiquement via la restauration des achats.
+Si vous avez acheté Pro : le reçu reste chez la boutique où vous avez acheté — Apple ou Google (pour les besoins de remboursement et de support). La désinstallation n'affecte pas les réinstallations futures — Pro se réactive automatiquement via la restauration des achats.
 
 ### Quels formats de manche sont supportés ?
 
@@ -91,18 +91,20 @@ Tous les formats incluent la conformité officielle WA Book 3 : règle du cordon
 
 ### L'app plante au démarrage
 
-1. Éteignez l'iPhone et rallumez-le
-2. Si le problème persiste : désinstallez et réinstallez JacArrow (les données d'achat ne sont PAS perdues — le reçu reste chez Apple)
-3. Envoyez le journal de plantage à galge.vender.0a@icloud.com : **Réglages → Confidentialité et sécurité → Analyse et améliorations → Données d'analyse** → trouvez le journal JacArrow → partagez-le avec nous
+1. Éteignez le téléphone et rallumez-le
+2. Si le problème persiste : désinstallez et réinstallez JacArrow (les données d'achat ne sont PAS perdues — le reçu reste chez la boutique)
+3. Envoyez-nous une description à galge.vender.0a@icloud.com — ce que vous faisiez juste avant le plantage, et quel téléphone vous avez
 
-Si vous avez choisi de partager les analyses avec le développeur via iOS, les journaux de plantage nous sont envoyés automatiquement.
+**iPhone :** vous pouvez trouver le journal de plantage vous-même et le joindre : **Réglages → Confidentialité et sécurité → Analyse et améliorations → Données d'analyse** → trouvez le journal JacArrow → partagez-le avec nous. Si « Partager l'analyse de l'app » est activé, nous recevons les journaux automatiquement.
+
+**Android :** les plantages nous sont signalés automatiquement si « Utilisation et diagnostics » est activé dans les paramètres du téléphone. Vous n'avez rien à faire de plus que de décrire ce qui s'est passé.
 
 ### Les données de score ont disparu après une mise à jour
 
 JacArrow stocke tout localement dans SQLite. Les mises à jour migrent la base de données uniquement vers l'avant — les anciennes données sont converties au nouveau format, jamais supprimées.
 
 Si vous constatez une perte de données :
-1. Vérifiez que vous êtes connecté avec le même identifiant Apple
+1. Vérifiez que vous êtes connecté avec le même compte qu'avant (identifiant Apple ou compte Google)
 2. Vérifiez **Réglages → À propos de l'app → Numéro de version** — est-il à jour ?
 3. Envoyez-nous une description à galge.vender.0a@icloud.com
 
@@ -111,12 +113,12 @@ Nous avons une règle stricte selon laquelle les migrations publiées sont immua
 ### Le pinch-zoom ne fonctionne pas sur le blason
 
 1. Essayez avec deux doigts, pas un
-2. Vérifiez que « Réduire les animations » n'est pas activé dans **Réglages iOS → Accessibilité → Mouvement** — cela peut limiter les gestes dans certaines apps
+2. Vérifiez que la réduction des animations n'est pas activée — **iPhone : Réglages → Accessibilité → Mouvement**, **Android : Paramètres → Accessibilité → Supprimer les animations** — cela peut limiter les gestes dans certaines apps
 3. Fermez l'app complètement (balayez vers le haut depuis le bas, balayez JacArrow vers le haut) et rouvrez-la
 
 ### La constellation vibre lors du glissement
 
-C'était un bug en v0.28.2 et antérieures — corrigé en v0.28.3. Mettez l'app à jour vers la dernière version sur l'App Store.
+C'était un bug en v0.28.2 et antérieures — corrigé en v0.28.3. Mettez l'app à jour vers la dernière version sur l'App Store ou Google Play.
 
 ---
 
@@ -137,7 +139,7 @@ Envoyez un e-mail à galge.vender.0a@icloud.com avec :
 - **Ce qui s'est mal passé** (aussi détaillé que possible)
 - **Ce que vous attendiez**
 - **Étape par étape** pour reproduire
-- **Version iOS** et **modèle d'iPhone** (Réglages → Général → Informations)
+- **Version du système et modèle de téléphone** (iPhone : Réglages → Général → Informations · Android : Paramètres → À propos du téléphone)
 - **Version d'JacArrow** (Réglages → À propos de l'app)
 - Capture d'écran si pertinent
 

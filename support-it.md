@@ -1,6 +1,6 @@
 # Supporto — JacArrow
 
-**Ultimo aggiornamento:** 2026-05-20
+**Ultimo aggiornamento:** 2026-08-22
 **Versione coperta:** v1.0+
 **Contatto:** galge.vender.0a@icloud.com
 
@@ -36,31 +36,31 @@ L'icona 📋 indica sessioni inserite manualmente con lo score-pad, non registra
 
 1. Tocca una funzione bloccata con Pro (es. un tema con il badge Pro)
 2. Appare il paywall con il pulsante **Acquista Pro (299 NOK)**
-3. Compare il modale di acquisto standard di Apple → conferma con Face ID / passcode
+3. Compare la finestra di acquisto dello store → conferma (Face ID / codice su iPhone, account Google su Android)
 4. Pro si attiva immediatamente — tutte le funzioni si sbloccano
 
 **Prezzo:** 299 NOK acquisto una tantum, a vita. Nessun abbonamento, nessun addebito ricorrente.
 
-### Come ripristino gli acquisti su un nuovo iPhone?
+### Come ripristino gli acquisti su un nuovo telefono?
 
-1. Scarica JacArrow sul nuovo iPhone (versione gratuita)
-2. Accedi con lo stesso ID Apple usato per acquistare Pro
+1. Scarica JacArrow sul nuovo telefono (versione gratuita)
+2. Accedi con lo stesso account usato per acquistare Pro — ID Apple su iPhone, account Google su Android
 3. Apri JacArrow → **Impostazioni → Licenza → Ripristina acquisti**
 4. Pro si riattiva automaticamente
 
-Se hai cambiato ID Apple: contatta galge.vender.0a@icloud.com e ti aiuteremo.
+Un acquisto non può passare da una piattaforma all'altra: se hai acquistato Pro su iPhone non vale su un telefono Android, e viceversa. Gli store non lo consentono. Se hai cambiato ID Apple o account Google: contatta galge.vender.0a@icloud.com e ti aiuteremo.
 
 ### Come esporto i miei dati?
 
-**Impostazioni → Sull'app → Esporta i miei dati** → appare il foglio di condivisione iOS. Scegli AirDrop, Mail, File o dove vuoi inviare il file JSON.
+**Impostazioni → Sull'app → Esporta i miei dati** → appare il menu di condivisione del telefono. Scegli AirDrop, Mail, File, Google Drive o dove vuoi inviare il file JSON.
 
 Il JSON contiene tutte le sessioni, i round, le frecce, gli obiettivi, le configurazioni dell'arco e le impostazioni — portabilità completa ai sensi dell'art. 20 GDPR.
 
 ### Come elimino tutti i miei dati?
 
-Disinstalla JacArrow → iOS rimuove automaticamente l'intero database SQLite e tutte le impostazioni. Nessun dato residuo rimane sul dispositivo.
+Disinstalla JacArrow → sia iOS sia Android rimuovono automaticamente l'intero database SQLite e tutte le impostazioni. Nessun dato residuo rimane sul dispositivo.
 
-Se hai acquistato Pro: la ricevuta rimane presso Apple (per scopi di rimborso e supporto). La disinstallazione non influisce sulle reinstallazioni future — Pro si riattiva automaticamente tramite Ripristina acquisti.
+Se hai acquistato Pro: la ricevuta rimane presso lo store in cui hai acquistato — Apple o Google (per scopi di rimborso e supporto). La disinstallazione non influisce sulle reinstallazioni future — Pro si riattiva automaticamente tramite Ripristina acquisti.
 
 ### Quali formati di round sono supportati?
 
@@ -91,18 +91,20 @@ Tutti i formati seguono la conformità ufficiale WA Book 3: regola della linea, 
 
 ### L'app si blocca all'avvio
 
-1. Spegni e riaccendi l'iPhone
-2. Se persiste: disinstalla e reinstalla JacArrow (i dati di acquisto NON vengono persi — la ricevuta rimane presso Apple)
-3. Invia il log del crash a galge.vender.0a@icloud.com: **Impostazioni → Privacy e sicurezza → Analisi e miglioramenti → Dati di analisi** → trova il log di JacArrow → condividilo con noi
+1. Spegni e riaccendi il telefono
+2. Se persiste: disinstalla e reinstalla JacArrow (i dati di acquisto NON vengono persi — la ricevuta rimane presso lo store)
+3. Inviaci una descrizione a galge.vender.0a@icloud.com — cosa stavi facendo poco prima del crash e quale telefono hai
 
-Se hai scelto di condividere l'analisi con lo sviluppatore tramite iOS, i log dei crash ci vengono inviati automaticamente.
+**iPhone:** puoi trovare il log del crash da solo e allegarlo: **Impostazioni → Privacy e sicurezza → Analisi e miglioramenti → Dati di analisi** → trova il log di JacArrow → condividilo con noi. Se hai attivato «Condividi analisi app», riceviamo i log automaticamente.
+
+**Android:** i crash ci vengono segnalati automaticamente se hai attivato «Utilizzo e diagnostica» nelle impostazioni del telefono. Non devi fare altro che descrivere cosa è successo.
 
 ### I dati di punteggio sono spariti dopo un aggiornamento
 
 JacArrow memorizza tutto localmente in SQLite. Gli aggiornamenti migrano il database solo in avanti — i vecchi dati vengono convertiti nel nuovo formato, mai eliminati.
 
 Se riscontri perdita di dati:
-1. Verifica di essere connesso con lo stesso ID Apple
+1. Verifica di essere connesso con lo stesso account di prima (ID Apple o account Google)
 2. Controlla **Impostazioni → Sull'app → Numero di versione** — è aggiornato?
 3. Inviaci una descrizione a galge.vender.0a@icloud.com
 
@@ -111,12 +113,12 @@ Abbiamo una regola ferrea che le migrazioni pubblicate sono immutabili — la pe
 ### Il pinch-zoom non funziona sulla visuale
 
 1. Prova con due dita, non una
-2. Verifica che «Riduci movimento» non sia attivato in **Impostazioni iOS → Accessibilità → Movimento** — può limitare le gesture in alcune app
+2. Verifica che la riduzione del movimento non sia attiva — **iPhone: Impostazioni → Accessibilità → Movimento**, **Android: Impostazioni → Accessibilità → Rimuovi animazioni** — può limitare le gesture in alcune app
 3. Chiudi l'app completamente (scorri verso l'alto dal basso, scorri JacArrow verso l'alto) e riapri
 
 ### La costellazione vibra durante il trascinamento
 
-Era un bug in v0.28.2 e precedenti — risolto in v0.28.3. Aggiorna l'app alla versione più recente sull'App Store.
+Era un bug in v0.28.2 e precedenti — risolto in v0.28.3. Aggiorna l'app alla versione più recente su App Store o Google Play.
 
 ---
 
@@ -137,7 +139,7 @@ Invia un'email a galge.vender.0a@icloud.com con:
 - **Cosa è andato storto** (più dettagliato possibile)
 - **Cosa ti aspettavi che succedesse**
 - **Passo per passo** per riprodurlo
-- **Versione iOS** e **modello di iPhone** (Impostazioni → Generali → Info)
+- **Versione del sistema operativo e modello di telefono** (iPhone: Impostazioni → Generali → Info · Android: Impostazioni → Info sul telefono)
 - **Versione di JacArrow** (Impostazioni → Sull'app)
 - Screenshot se rilevante
 

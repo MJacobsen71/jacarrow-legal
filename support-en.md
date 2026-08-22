@@ -1,6 +1,6 @@
 # Support — JacArrow
 
-**Last updated:** 2026-05-20
+**Last updated:** 2026-08-22
 **Version covered:** v1.0+
 **Contact:** galge.vender.0a@icloud.com
 
@@ -36,31 +36,31 @@ The 📋 icon marks sessions that were entered manually using the score pad, not
 
 1. Tap any Pro-locked feature (e.g. a theme locked with a Pro badge)
 2. Paywall appears with **Buy Pro (NOK 299)** button
-3. Apple's standard purchase modal appears → confirm with Face ID / passcode
+3. The store's purchase dialog appears → confirm (Face ID / passcode on iPhone, Google account on Android)
 4. Pro activates immediately — all features unlock
 
 **Price:** NOK 299 one-time purchase, lifetime. No subscription, no recurring charges.
 
-### How do I restore purchases on a new iPhone?
+### How do I restore purchases on a new phone?
 
-1. Download JacArrow on the new iPhone (free version)
-2. Sign in with the same Apple ID you used to buy Pro
+1. Download JacArrow on the new phone (free version)
+2. Sign in with the same account you bought Pro with — Apple ID on iPhone, Google account on Android
 3. Open JacArrow → **Settings → License → Restore Purchases**
 4. Pro reactivates automatically
 
-If you've changed Apple ID: contact galge.vender.0a@icloud.com and we'll help you.
+A purchase cannot move between platforms: if you bought Pro on iPhone it does not apply on an Android phone, and the other way around. The stores do not allow it. If you've changed Apple ID or Google account: contact galge.vender.0a@icloud.com and we'll help you.
 
 ### How do I export my data?
 
-**Settings → About the app → Export my data** → iOS' share sheet appears. Choose AirDrop, Mail, Files, or wherever you want to send the JSON file.
+**Settings → About the app → Export my data** → your phone's share sheet appears. Choose AirDrop, Mail, Files, Google Drive, or wherever you want to send the JSON file.
 
 The JSON contains all sessions, rounds, arrows, goals, bow setups, and settings — complete portability under GDPR Art. 20.
 
 ### How do I delete all my data?
 
-Uninstall JacArrow → iOS automatically removes the entire SQLite database and all settings. No residual data remains on the device.
+Uninstall JacArrow → both iOS and Android automatically remove the entire SQLite database and all settings. No residual data remains on the device.
 
-If you've bought Pro: the receipt remains with Apple (for refund and support purposes). Uninstall doesn't affect future re-installs — Pro reactivates automatically via Restore Purchases.
+If you've bought Pro: the receipt remains with the store you bought from — Apple or Google (for refund and support purposes). Uninstall doesn't affect future re-installs — Pro reactivates automatically via Restore Purchases.
 
 ### Which round formats are supported?
 
@@ -91,18 +91,20 @@ All formats include official WA Book 3 compliance: line-breaking rule, separate 
 
 ### The app crashes on launch
 
-1. Turn iPhone off and on again
-2. If still failing: uninstall and reinstall JacArrow (purchase data is NOT lost — receipt remains with Apple)
-3. Send crash log to galge.vender.0a@icloud.com: **Settings → Privacy & Security → Analytics & Improvements → Analytics Data** → find the JacArrow log → share with us
+1. Turn the phone off and on again
+2. If still failing: uninstall and reinstall JacArrow (purchase data is NOT lost — the receipt remains with the store)
+3. Send us a description at galge.vender.0a@icloud.com — what you were doing right before the crash, and which phone you have
 
-If you've chosen to share analytics with the developer via iOS, crash logs are automatically sent to us.
+**iPhone:** you can find the crash log yourself and include it: **Settings → Privacy & Security → Analytics & Improvements → Analytics Data** → find the JacArrow log → share with us. If you have «Share App Analytics» enabled, we receive crash logs automatically.
+
+**Android:** crashes are reported to us automatically if you have «Usage & diagnostics» enabled in your phone settings. You don't need to do anything beyond describing what happened.
 
 ### Score data disappeared after update
 
 JacArrow stores everything locally in SQLite. Updates migrate the database forward-only — old data is converted to the new format, never deleted.
 
 If you experience data loss:
-1. Verify you're signed in with the same Apple ID
+1. Verify you're signed in with the same account as before (Apple ID or Google account)
 2. Check **Settings → About the app → Version number** — is it the latest?
 3. Send us a description at galge.vender.0a@icloud.com
 
@@ -111,12 +113,12 @@ We have a strict rule that published migrations are immutable — data loss from
 ### Pinch-zoom doesn't work on the target
 
 1. Try with two fingers, not one
-2. Check that you don't have «Reduce Motion» turned on in **iOS Settings → Accessibility → Motion** — it can limit gestures in some apps
+2. Check that you don't have reduced motion turned on — **iPhone: Settings → Accessibility → Motion**, **Android: Settings → Accessibility → Remove animations** — it can limit gestures in some apps
 3. Force-close the app (swipe up from the bottom, swipe JacArrow up) and reopen
 
 ### The constellation vibrates when dragging
 
-This was a bug in v0.28.2 and earlier — fixed in v0.28.3. Update the app to the latest version in the App Store.
+This was a bug in v0.28.2 and earlier — fixed in v0.28.3. Update the app to the latest version in the App Store or Google Play.
 
 ---
 
@@ -137,7 +139,7 @@ Send an email to galge.vender.0a@icloud.com with:
 - **What went wrong** (as detailed as you can)
 - **What you expected to happen**
 - **Step-by-step** to reproduce
-- **iOS version** and **iPhone model** (Settings → General → About)
+- **Operating-system version and phone model** (iPhone: Settings → General → About · Android: Settings → About phone)
 - **JacArrow version** (Settings → About the app)
 - Screenshot if relevant
 

@@ -1,6 +1,6 @@
 # Support — JacArrow
 
-**Zuletzt aktualisiert:** 2026-05-20
+**Zuletzt aktualisiert:** 2026-08-22
 **Abgedeckte Version:** v1.0+
 **Kontakt:** galge.vender.0a@icloud.com
 
@@ -36,31 +36,31 @@ Das 📋-Symbol markiert Trainingseinheiten, die manuell mit dem Score-Pad einge
 
 1. Tippe eine Pro-geschützte Funktion an (z. B. ein Theme mit Pro-Badge)
 2. Das Paywall erscheint mit der Schaltfläche **Pro kaufen (299 NOK)**
-3. Apples Standard-Kaufdialog erscheint → bestätige mit Face ID / Passcode
+3. Der Kaufdialog des Stores erscheint → bestätige (Face ID / Passcode auf dem iPhone, Google-Konto auf Android)
 4. Pro wird sofort aktiviert — alle Funktionen werden freigeschaltet
 
 **Preis:** 299 NOK Einmalkauf, lebenslang. Kein Abonnement, keine wiederkehrenden Belastungen.
 
-### Wie stelle ich Käufe auf einem neuen iPhone wieder her?
+### Wie stelle ich Käufe auf einem neuen Smartphone wieder her?
 
-1. Lade JacArrow auf dem neuen iPhone herunter (kostenlose Version)
-2. Melde dich mit derselben Apple-ID an, mit der du Pro gekauft hast
+1. Lade JacArrow auf dem neuen Smartphone herunter (kostenlose Version)
+2. Melde dich mit demselben Konto an, mit dem du Pro gekauft hast — Apple-ID auf dem iPhone, Google-Konto auf Android
 3. Öffne JacArrow → **Einstellungen → Lizenz → Käufe wiederherstellen**
 4. Pro wird automatisch reaktiviert
 
-Wenn du die Apple-ID gewechselt hast: kontaktiere galge.vender.0a@icloud.com, und wir helfen dir.
+Ein Kauf lässt sich nicht zwischen den Plattformen übertragen: hast du Pro auf dem iPhone gekauft, gilt er nicht auf einem Android-Gerät und umgekehrt. Die Stores erlauben das nicht. Hast du die Apple-ID oder das Google-Konto gewechselt: kontaktiere galge.vender.0a@icloud.com, und wir helfen dir.
 
 ### Wie exportiere ich meine Daten?
 
-**Einstellungen → Über die App → Meine Daten exportieren** → das iOS-Share-Sheet erscheint. Wähle AirDrop, Mail, Dateien oder wohin auch immer du die JSON-Datei senden möchtest.
+**Einstellungen → Über die App → Meine Daten exportieren** → das Teilen-Menü deines Smartphones erscheint. Wähle AirDrop, Mail, Dateien, Google Drive oder wohin auch immer du die JSON-Datei senden möchtest.
 
 Die JSON enthält alle Trainingseinheiten, Runden, Pfeile, Ziele, Bogen-Setups und Einstellungen — vollständige Portabilität nach DSGVO Art. 20.
 
 ### Wie lösche ich alle meine Daten?
 
-Deinstalliere JacArrow → iOS entfernt automatisch die gesamte SQLite-Datenbank und alle Einstellungen. Auf dem Gerät verbleiben keine Restdaten.
+Deinstalliere JacArrow → sowohl iOS als auch Android entfernen automatisch die gesamte SQLite-Datenbank und alle Einstellungen. Auf dem Gerät verbleiben keine Restdaten.
 
-Wenn du Pro gekauft hast: die Quittung bleibt bei Apple (für Erstattungs- und Support-Zwecke). Die Deinstallation hat keinen Einfluss auf zukünftige Neuinstallationen — Pro reaktiviert sich automatisch über Käufe wiederherstellen.
+Wenn du Pro gekauft hast: die Quittung bleibt bei dem Store, in dem du gekauft hast — Apple oder Google (für Erstattungs- und Support-Zwecke). Die Deinstallation hat keinen Einfluss auf zukünftige Neuinstallationen — Pro reaktiviert sich automatisch über Käufe wiederherstellen.
 
 ### Welche Rundenformate werden unterstützt?
 
@@ -91,18 +91,20 @@ Alle Formate folgen offizieller WA-Book-3-Compliance: Linienberührungsregel, se
 
 ### Die App stürzt beim Start ab
 
-1. Schalte das iPhone aus und wieder ein
-2. Wenn weiterhin Probleme: deinstalliere und installiere JacArrow neu (Kaufdaten gehen NICHT verloren — die Quittung bleibt bei Apple)
-3. Sende das Crash-Log an galge.vender.0a@icloud.com: **Einstellungen → Datenschutz & Sicherheit → Analyse & Verbesserungen → Analysedaten** → finde das JacArrow-Log → teile es mit uns
+1. Schalte das Smartphone aus und wieder ein
+2. Wenn weiterhin Probleme: deinstalliere und installiere JacArrow neu (Kaufdaten gehen NICHT verloren — die Quittung bleibt beim Store)
+3. Sende uns eine Beschreibung an galge.vender.0a@icloud.com — was du unmittelbar vor dem Absturz getan hast und welches Smartphone du hast
 
-Wenn du dich entschieden hast, Analytics über iOS mit dem Entwickler zu teilen, werden Crash-Logs automatisch an uns gesendet.
+**iPhone:** du kannst das Crash-Log selbst finden und mitsenden: **Einstellungen → Datenschutz & Sicherheit → Analyse & Verbesserungen → Analysedaten** → finde das JacArrow-Log → mit uns teilen. Wenn «App-Analyse teilen» aktiviert ist, erhalten wir Crash-Logs automatisch.
+
+**Android:** Abstürze werden automatisch an uns gemeldet, wenn «Nutzung & Diagnose» in den Smartphone-Einstellungen aktiviert ist. Du musst nichts weiter tun, als zu beschreiben, was passiert ist.
 
 ### Punktdaten sind nach einem Update verschwunden
 
 JacArrow speichert alles lokal in SQLite. Updates migrieren die Datenbank vorwärtsgerichtet — alte Daten werden ins neue Format konvertiert, niemals gelöscht.
 
 Falls du Datenverlust erlebst:
-1. Verifiziere, dass du mit derselben Apple-ID angemeldet bist
+1. Verifiziere, dass du mit demselben Konto wie vorher angemeldet bist (Apple-ID oder Google-Konto)
 2. Prüfe **Einstellungen → Über die App → Versionsnummer** — ist sie aktuell?
 3. Sende uns eine Beschreibung an galge.vender.0a@icloud.com
 
@@ -111,12 +113,12 @@ Wir haben eine strikte Regel, dass veröffentlichte Migrationen unveränderlich 
 ### Pinch-Zoom funktioniert nicht auf der Auflage
 
 1. Versuche es mit zwei Fingern, nicht einem
-2. Prüfe, dass «Bewegung reduzieren» nicht aktiviert ist unter **iOS-Einstellungen → Bedienungshilfen → Bewegung** — dies kann Gesten in einigen Apps einschränken
+2. Prüfe, dass reduzierte Bewegung nicht aktiviert ist — **iPhone: Einstellungen → Bedienungshilfen → Bewegung**, **Android: Einstellungen → Bedienungshilfen → Animationen entfernen** — dies kann Gesten in einigen Apps einschränken
 3. App komplett schließen (von unten nach oben wischen, JacArrow nach oben wischen) und erneut öffnen
 
 ### Die Konstellationsansicht vibriert beim Ziehen
 
-Das war ein Bug in v0.28.2 und früher — behoben in v0.28.3. Aktualisiere die App auf die neueste Version im App Store.
+Das war ein Bug in v0.28.2 und früher — behoben in v0.28.3. Aktualisiere die App auf die neueste Version im App Store oder bei Google Play.
 
 ---
 
@@ -137,7 +139,7 @@ Sende eine E-Mail an galge.vender.0a@icloud.com mit:
 - **Was schiefgelaufen ist** (so detailliert wie möglich)
 - **Was du erwartet hast**
 - **Schritt-für-Schritt** zur Reproduktion
-- **iOS-Version** und **iPhone-Modell** (Einstellungen → Allgemein → Info)
+- **Betriebssystemversion und Smartphone-Modell** (iPhone: Einstellungen → Allgemein → Info · Android: Einstellungen → Über das Telefon)
 - **JacArrow-Version** (Einstellungen → Über die App)
 - Screenshot, falls relevant
 

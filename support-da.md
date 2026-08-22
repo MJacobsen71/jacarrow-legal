@@ -1,6 +1,6 @@
 # Support — JacArrow
 
-**Sidst opdateret:** 2026-05-20
+**Sidst opdateret:** 2026-08-22
 **Version dækket:** v1.0+
 **Kontakt:** galge.vender.0a@icloud.com
 
@@ -36,31 +36,31 @@ I score-pad-tilstand: tryk på pil-badgen i score-pad og vælg en ny værdi.
 
 1. Tryk på en Pro-låst funktion (fx et tema med Pro-mærke)
 2. Paywall'en vises med knappen **Køb Pro (299 NOK)**
-3. Apples standard-købsmodal vises → bekræft med Face ID / kode
+3. Butikkens købsvindue vises → bekræft (Face ID / kode på iPhone, Google-konto på Android)
 4. Pro aktiveres med det samme — alle funktioner låses op
 
 **Pris:** 299 NOK engangskøb, livstid. Intet abonnement, ingen tilbagevendende opkrævninger.
 
-### Hvordan gendanner jeg køb på en ny iPhone?
+### Hvordan gendanner jeg køb på en ny telefon?
 
-1. Download JacArrow på den nye iPhone (gratis-versionen)
-2. Log ind med samme Apple-ID, du brugte til at købe Pro
+1. Download JacArrow på den nye telefon (gratis-versionen)
+2. Log ind med samme konto, du købte Pro med — Apple-ID på iPhone, Google-konto på Android
 3. Åbn JacArrow → **Indstillinger → Licens → Gendan køb**
 4. Pro reaktiveres automatisk
 
-Hvis du har skiftet Apple-ID: kontakt galge.vender.0a@icloud.com, så hjælper vi dig.
+Et køb kan ikke flyttes mellem platformene: har du købt Pro på iPhone, gælder det ikke på en Android-telefon, og omvendt. Butikkerne tillader det ikke. Har du skiftet Apple-ID eller Google-konto: kontakt galge.vender.0a@icloud.com, så hjælper vi dig.
 
 ### Hvordan eksporterer jeg mine data?
 
-**Indstillinger → Om appen → Eksportér mine data** → iOS' delemenu kommer frem. Vælg AirDrop, Mail, Filer, eller hvorhen du vil sende JSON-filen.
+**Indstillinger → Om appen → Eksportér mine data** → telefonens delemenu kommer frem. Vælg AirDrop, Mail, Filer, Google Drive, eller hvorhen du vil sende JSON-filen.
 
 JSON'en indeholder alle pas, runder, pile, mål, bue-opsætninger og indstillinger — fuld portabilitet efter GDPR Art. 20.
 
 ### Hvordan sletter jeg alle mine data?
 
-Afinstallér JacArrow → iOS fjerner automatisk hele SQLite-databasen og alle indstillinger. Ingen restdata bliver tilbage på enheden.
+Afinstallér JacArrow → både iOS og Android fjerner automatisk hele SQLite-databasen og alle indstillinger. Ingen restdata bliver tilbage på enheden.
 
-Hvis du har købt Pro: kvitteringen forbliver hos Apple (til refusion og support). Afinstallation påvirker ikke fremtidige geninstallationer — Pro reaktiveres automatisk via Gendan køb.
+Hvis du har købt Pro: kvitteringen forbliver hos den butik, du købte i — Apple eller Google (til refusion og support). Afinstallation påvirker ikke fremtidige geninstallationer — Pro reaktiveres automatisk via Gendan køb.
 
 ### Hvilke runde-formater understøttes?
 
@@ -91,18 +91,20 @@ Alle formater følger officiel WA Book 3-overholdelse: linjereglen, separat X-re
 
 ### Appen crasher ved opstart
 
-1. Sluk iPhone og tænd igen
-2. Hvis problemet fortsætter: afinstallér og geninstallér JacArrow (købsdata mistes IKKE — kvitteringen forbliver hos Apple)
-3. Send crash-log til galge.vender.0a@icloud.com: **Indstillinger → Anonymitet og sikkerhed → Analyse og forbedringer → Analysedata** → find JacArrow-loggen → del med os
+1. Sluk telefonen og tænd igen
+2. Hvis problemet fortsætter: afinstallér og geninstallér JacArrow (købsdata mistes IKKE — kvitteringen forbliver hos butikken)
+3. Send os en beskrivelse på galge.vender.0a@icloud.com — hvad du gjorde lige før nedbruddet, og hvilken telefon du har
 
-Hvis du har valgt at dele analyse med udvikleren via iOS, sendes crash-logs automatisk til os.
+**iPhone:** du kan selv finde crash-loggen og sende den med: **Indstillinger → Anonymitet og sikkerhed → Analyse og forbedringer → Analysedata** → find JacArrow-loggen → del med os. Har du «Del app-analyse» slået til, får vi crash-logs automatisk.
+
+**Android:** nedbrud rapporteres automatisk til os, hvis du har «Brug og diagnosticering» slået til i telefonens indstillinger. Du behøver ikke gøre andet end at beskrive, hvad der skete.
 
 ### Pointdata forsvandt efter opdatering
 
 JacArrow gemmer alt lokalt i SQLite. Opdateringer migrerer databasen kun fremad — gamle data konverteres til nyt format, slettes aldrig.
 
 Hvis du oplever datatab:
-1. Verificér, at du er logget ind med samme Apple-ID
+1. Verificér, at du er logget ind med samme konto som før (Apple-ID eller Google-konto)
 2. Tjek **Indstillinger → Om appen → Versionsnummer** — er det den nyeste?
 3. Send os en beskrivelse på galge.vender.0a@icloud.com
 
@@ -111,12 +113,12 @@ Vi har en streng regel om, at offentliggjorte migrationer er uforanderlige — d
 ### Pinch-zoom virker ikke på skiven
 
 1. Prøv med to fingre, ikke én
-2. Tjek, at du ikke har «Reducér bevægelse» slået til i **iOS-indstillinger → Tilgængelighed → Bevægelse** — det kan begrænse gestures i nogle apps
+2. Tjek, at du ikke har reduceret bevægelse slået til — **iPhone: Indstillinger → Tilgængelighed → Bevægelse**, **Android: Indstillinger → Tilgængelighed → Fjern animationer** — det kan begrænse gestures i nogle apps
 3. Luk appen helt (stryg op fra bunden, stryg JacArrow opad) og åbn igen
 
 ### Konstellationsvisningen vibrerer ved træk
 
-Dette var en bug i v0.28.2 og tidligere — rettet i v0.28.3. Opdater appen til seneste version i App Store.
+Dette var en bug i v0.28.2 og tidligere — rettet i v0.28.3. Opdater appen til seneste version i App Store eller Google Play.
 
 ---
 
@@ -137,7 +139,7 @@ Send en e-mail til galge.vender.0a@icloud.com med:
 - **Hvad gik galt** (så detaljeret du kan)
 - **Hvad du forventede skulle ske**
 - **Trin-for-trin** for at reproducere
-- **iOS-version** og **iPhone-model** (Indstillinger → Generelt → Om)
+- **Operativsystemversion og telefonmodel** (iPhone: Indstillinger → Generelt → Om · Android: Indstillinger → Om telefonen)
 - **JacArrow-version** (Indstillinger → Om appen)
 - Skærmbillede hvis relevant
 
