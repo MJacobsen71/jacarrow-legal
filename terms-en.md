@@ -131,6 +131,9 @@ can contact the consumer authority in your country.
 
 Questions about these terms: **galge.vender.0a@icloud.com**
 
+Our full trader contact details (postal address and phone number) are shown
+on JacArrow's page in Google Play.
+
 ---
 
 *JacArrow — Morten Jacobsen, Norway*

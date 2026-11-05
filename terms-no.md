@@ -135,6 +135,9 @@ forbrukermyndigheten i landet ditt.
 
 Spørsmål om vilkårene: **galge.vender.0a@icloud.com**
 
+Fullstendige kontaktopplysninger for oss som næringsdrivende (postadresse og
+telefonnummer) vises på JacArrows side i Google Play.
+
 ---
 
 *JacArrow — Morten Jacobsen, Norge*
