@@ -25,6 +25,15 @@ WA Book 3 compliant scoring, 10 languages, atmospheric themes, in-depth statisti
 
 ---
 
+## Terms of Use
+
+| Language | Språk | Link |
+|----------|-------|------|
+| 🇬🇧 | English | [Terms of Use](./terms-en) |
+| 🇳🇴 | Norsk (Bokmål) | [Vilkår for bruk](./terms-no) |
+
+---
+
 ## Support
 
 | Language | Språk | Link |
